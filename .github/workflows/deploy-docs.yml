@@ -1,0 +1,29 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build docs
+        run: npm run build:docs
+
+      - name: Deploy storybook
+        working-directory: ./packages/docs
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        env:
+          GITHUB_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
