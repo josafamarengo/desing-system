@@ -1,0 +1,2 @@
+import{A as t}from"./index-5a605650.js";import"./index-398e2fd5.js";import"./es.object.get-own-property-descriptor-90a0d275.js";import"./index-51e3a6ab.js";import"./jsx-runtime-ade3906b.js";import"./index-cfec8f7f.js";const m={title:"Data display/Avatar",component:t,args:{src:"https://github.com/josafamarengo.png",alt:"Josafá Marengo"},argTypes:{src:{control:{type:"text"}}}},c={},e={args:{src:void 0}},n=["Primary","WithFallback"];export{c as Primary,e as WithFallback,n as __namedExportsOrder,m as default};
+//# sourceMappingURL=Avatar.stories-f971b94f.js.map
